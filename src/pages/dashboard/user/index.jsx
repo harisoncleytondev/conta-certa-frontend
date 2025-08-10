@@ -6,7 +6,11 @@ export const DashboardUser = () => {
 
   return (
     <div className="flex">
+<<<<<<< HEAD
       {matches[2] == null ? <Navigate to={'charts'} /> : ''}
+=======
+      {matches[1] == null ? <Navigate to={'charts'} /> : ''}
+>>>>>>> 7338874ae47fcf884bba715f04a901b91baac592
       <DashboardNavbar />
       <Outlet />
     </div>

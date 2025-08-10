@@ -1,9 +1,16 @@
+<<<<<<< HEAD
 import { useContext, useState } from 'react';
+=======
+import { useState } from 'react';
+>>>>>>> 7338874ae47fcf884bba715f04a901b91baac592
 import { DynamicChart } from '../../../../../components/charts';
 import { Streaming } from '../../../../../components/streamingText';
 import { IoSparklesOutline, IoSearchOutline } from 'react-icons/io5';
 import { motion } from 'framer-motion';
+<<<<<<< HEAD
 import UserContext from '../../../../../contexts/user/UserContext';
+=======
+>>>>>>> 7338874ae47fcf884bba715f04a901b91baac592
 
 // Simulação de dados
 const financialData = [
@@ -41,7 +48,11 @@ const totalBalance = financialData[0].value - financialData[1].value;
 // Simulação de dados
 
 export const Charts = () => {
+<<<<<<< HEAD
   const { dark, setDarkMode, chartType, setTypeChart } = useContext(UserContext);
+=======
+  const [typeChart, setTypeChart] = useState('bar');
+>>>>>>> 7338874ae47fcf884bba715f04a901b91baac592
 
   return (
     <div className="flex-1 p-4 md:p-6 lg:p-8 bg-areia font-inter rounded-lg m-2 md:m-4 overflow-y-auto max-h-[calc(100vh-2rem)] custom-scrollbar">
@@ -98,7 +109,10 @@ export const Charts = () => {
               id="chartType"
               name="chartType"
               onChange={(e) => setTypeChart(e.currentTarget.value)}
+<<<<<<< HEAD
               defaultValue={chartType}
+=======
+>>>>>>> 7338874ae47fcf884bba715f04a901b91baac592
               className="p-2 rounded-md bg-areia text-grafite font-medium focus:outline-none focus:ring-2 focus:ring-musgo"
             >
               <option value="bar">Gráfico de Barras</option>
@@ -152,7 +166,11 @@ export const Charts = () => {
               Gastos totais e dispesas.
             </h4>
             <DynamicChart
+<<<<<<< HEAD
               type={chartType}
+=======
+              type={typeChart}
+>>>>>>> 7338874ae47fcf884bba715f04a901b91baac592
               data={dataOne}
               dataKey="Gasto Total"
               innerRadius={60}
@@ -165,7 +183,11 @@ export const Charts = () => {
               Histórico de Transações Mensais
             </h4>
             <DynamicChart
+<<<<<<< HEAD
               type={chartType}
+=======
+              type={typeChart}
+>>>>>>> 7338874ae47fcf884bba715f04a901b91baac592
               data={dataTwo}
               dataKey="Valor das Transações"
               innerRadius={60}

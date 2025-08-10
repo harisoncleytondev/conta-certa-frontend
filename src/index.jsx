@@ -8,7 +8,10 @@ import { Login } from './pages/auth/pages/login';
 import { Register } from './pages/auth/pages/register';
 import { DashboardUser } from './pages/dashboard/user';
 import { Charts } from './pages/dashboard/user/pages/charts';
+<<<<<<< HEAD
 import { LoggedLayout } from './layouts/LoggedLayout';
+=======
+>>>>>>> 7338874ae47fcf884bba715f04a901b91baac592
 
 const router = createBrowserRouter([
   {
@@ -30,6 +33,7 @@ const router = createBrowserRouter([
     ],
   },
   {
+<<<<<<< HEAD
     path: '/logged',
     Component: LoggedLayout,
     children: [
@@ -44,6 +48,16 @@ const router = createBrowserRouter([
         ],
       },
     ],
+=======
+    path: "/dashboard",
+    Component: DashboardUser,
+    children: [
+      {
+        path: 'charts',
+        Component: Charts,
+      },
+    ]
+>>>>>>> 7338874ae47fcf884bba715f04a901b91baac592
   },
 ]);
 
