@@ -1,21 +1,24 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import logoImage from '../../assets/logo.svg';
 import {
   IoBarChartOutline,
   IoExitOutline,
   IoMoonOutline,
-  IoMenuOutline, // Adicionado ícone de menu
-  IoCloseOutline, // Adicionado ícone de fechar
+  IoMenuOutline,
+  IoCloseOutline,
+  IoSunny,
 } from 'react-icons/io5';
 import { MdOutlineAttachMoney } from 'react-icons/md';
 import { CiUser } from 'react-icons/ci';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom'; // Importar Link para navegação
+import UserContext from '../../contexts/user/UserContext';
 
-const Section = ({ icon: Icon, name, show, to }) => {
+const Section = ({ icon: Icon, name, show, to, action }) => {
   return (
     <Link
       to={to}
+      onClick={() => action()}
       className="cursor-pointer flex flex-col items-center gap-1.5 p-2 hover:border border-areia rounded-[9px] transition-all ease-in duration-150 w-full"
     >
       <motion.button className="text-[20px] text-areia cursor-pointer hover:scale-105 hover:-translate-y-0.5 hover:border-b-2 transition-all ease-linear duration-200">
@@ -39,16 +42,17 @@ const Section = ({ icon: Icon, name, show, to }) => {
 export const DashboardNavbar = () => {
   const [show, setShow] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { dark, setDarkMode } = useContext(UserContext);
 
   const handleShow = () => {
     if (isMobileMenuOpen) return;
     setShow(!show);
-  }
+  };
 
   const handleShowMobile = () => {
     setShow(!show);
     setIsMobileMenuOpen(!isMobileMenuOpen);
-  }
+  };
 
   return (
     <>
@@ -99,7 +103,13 @@ export const DashboardNavbar = () => {
               ''
             )}
           </div>
-          <Section icon={IoMoonOutline} name="Modo Escuro" show={show} to="#" />
+          <Section
+            icon={dark === 'dark' ? IoSunny : IoMoonOutline}
+            name={dark === 'light' ? 'Modo Escuro' : 'Modo Claro'}
+            action={() => setDarkMode(dark === 'light' ? 'dark' : 'light')}
+            show={show}
+            to="#"
+          />
         </div>
 
         <div className="flex flex-col items-center justify-center space-y-6">
