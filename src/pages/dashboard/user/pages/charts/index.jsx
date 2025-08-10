@@ -147,7 +147,7 @@ export const Charts = () => {
           viewport={{ once: true, amount: 0.5 }}
           className="w-full lg:w-2/3 flex flex-col gap-6"
         >
-          <div className="bg-white p-4 md:p-6 rounded-lg shadow-md flex-1 min-h-[350px]">
+          <div className="bg-bg p-4 md:p-6 rounded-lg shadow-md flex-1 min-h-[350px]">
             <h4 className="text-xl md:text-2xl font-inter font-bold mb-4 text-terracota text-center">
               Gastos totais e dispesas.
             </h4>
@@ -160,7 +160,7 @@ export const Charts = () => {
             />
           </div>
 
-          <div className="bg-white p-4 md:p-6 rounded-lg shadow-md flex-1 min-h-[350px]">
+          <div className="bg-bg p-4 md:p-6 rounded-lg shadow-md flex-1 min-h-[350px]">
             <h4 className="text-xl md:text-2xl font-inter font-bold mb-4 text-terracota text-center">
               Histórico de Transações Mensais
             </h4>

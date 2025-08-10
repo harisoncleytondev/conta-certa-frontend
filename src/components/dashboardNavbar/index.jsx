@@ -60,7 +60,7 @@ export const DashboardNavbar = () => {
         <button
           onClick={() => handleShowMobile()}
           className={`p-2 bg-musgo text-areia rounded-full shadow-lg ${
-            isMobileMenuOpen ? 'fixed left-[80%]' : ''
+            isMobileMenuOpen ? 'fixed left-[90%]' : ''
           }`}
         >
           {isMobileMenuOpen ? (
