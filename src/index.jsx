@@ -6,6 +6,7 @@ import { Home } from './pages/home';
 import { Auth } from './pages/auth';
 import { Login } from './pages/auth/pages/login';
 import { Register } from './pages/auth/pages/register';
+import { DashboardUser } from './pages/dashboard/user';
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
         Component: Register,
       },
     ],
+  },
+  {
+    path: "/dashboard",
+    Component: DashboardUser,
   },
 ]);
 
