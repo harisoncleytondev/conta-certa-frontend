@@ -7,6 +7,7 @@ import { Auth } from './pages/auth';
 import { Login } from './pages/auth/pages/login';
 import { Register } from './pages/auth/pages/register';
 import { DashboardUser } from './pages/dashboard/user';
+import { Charts } from './pages/dashboard/user/pages/charts';
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,12 @@ const router = createBrowserRouter([
   {
     path: "/dashboard",
     Component: DashboardUser,
+    children: [
+      {
+        path: 'charts',
+        Component: Charts,
+      },
+    ]
   },
 ]);
 
